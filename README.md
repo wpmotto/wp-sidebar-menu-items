@@ -1,7 +1,3 @@
-# WordPress Sidebar Menu Items Plugin
+# WP Sidebar Menu Items
 
-Use sidebar areas within your menus. Simple and flexibleway for making mega menu dropdowns!
-
-## Plugin Deployment
-
-Use https://github.com/GaryJones/wordpress-plugin-svn-deploy to deploy via SVN from Git.
+[WordPress plugin](https://wordpress.org/plugins/sidebar-menu-items/) that allows you to use sidebar areas within your menus. Simple and flexibleway for making mega menu dropdowns!
