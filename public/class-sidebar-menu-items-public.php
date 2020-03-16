@@ -4,7 +4,7 @@
  * The public-facing functionality of the plugin.
  *
  * @link       http://example.com
- * @since      0.1.0
+ * @since      0.1.2
  *
  * @package    sidebar_menu_items
  * @subpackage sidebar_menu_items/public
@@ -25,7 +25,7 @@ class Sidebar_Menu_Items_Public
     /**
      * The ID of this plugin.
      *
-     * @since    0.1.0
+     * @since    0.1.2
      * @access   private
      * @var      string    $sidebar_menu_items    The ID of this plugin.
      */
@@ -34,7 +34,7 @@ class Sidebar_Menu_Items_Public
     /**
      * The version of this plugin.
      *
-     * @since    0.1.0
+     * @since    0.1.2
      * @access   private
      * @var      string    $version    The current version of this plugin.
      */
@@ -43,7 +43,7 @@ class Sidebar_Menu_Items_Public
     /**
      * Initialize the class and set its properties.
      *
-     * @since    0.1.0
+     * @since    0.1.2
      * @param      string    $sidebar_menu_items       The name of the plugin.
      * @param      string    $version    The version of this plugin.
      */
@@ -57,11 +57,15 @@ class Sidebar_Menu_Items_Public
     {
         if($this->is_sidebar_menu_object($item)) {
             $class = "{$this->sidebar_menu_items}-{$item->post_name}";
-            $item_output = str_replace('<a', '<div class="' . $class . '"',
-                str_replace('</a>', '</div>', $item_output)
-            );
+            // Suppress errors since we're loading a partial Doc.
+            $doc = @DOMDocument::loadHTML($item_output);
+            $sidebar = $doc->createElement('div');
+            $sidebar->setAttribute('class', $class);
+            $container = $doc->getElementsByTagName('a')->item(0);
+            while($container->childNodes->length > 0)
+                $sidebar->appendChild($container->childNodes->item(0));
+            $item_output = $doc->saveHTML($sidebar);
         }
-
         return $item_output;
     }
 
@@ -80,7 +84,7 @@ class Sidebar_Menu_Items_Public
 
     private function is_sidebar_menu_object($item)
     {
-        return $this->sidebar_menu_items == $item->type;
+        return $this->sidebar_menu_items === $item->type;
     }
 
     private function get_sidebar_id( $item )

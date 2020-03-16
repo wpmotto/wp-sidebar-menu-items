@@ -7,7 +7,7 @@
  * public-facing side of the site and the admin area.
  *
  * @link       http://example.com
- * @since      0.1.0
+ * @since      0.1.2
  *
  * @package    sidebar_menu_items
  * @subpackage sidebar_menu_items/includes
@@ -22,7 +22,7 @@
  * Also maintains the unique identifier of this plugin as well as the current
  * version of the plugin.
  *
- * @since      0.1.0
+ * @since      0.1.2
  * @package    sidebar_menu_items
  * @subpackage sidebar_menu_items/includes
  * @author     Your Name <email@example.com>
@@ -33,7 +33,7 @@ class Sidebar_Menu_Items {
 	 * The loader that's responsible for maintaining and registering all hooks that power
 	 * the plugin.
 	 *
-	 * @since    0.1.0
+	 * @since    0.1.2
 	 * @access   protected
 	 * @var      sidebar_menu_items_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
@@ -42,7 +42,7 @@ class Sidebar_Menu_Items {
 	/**
 	 * The unique identifier of this plugin.
 	 *
-	 * @since    0.1.0
+	 * @since    0.1.2
 	 * @access   protected
 	 * @var      string    $sidebar_menu_items    The string used to uniquely identify this plugin.
 	 */
@@ -51,7 +51,7 @@ class Sidebar_Menu_Items {
 	/**
 	 * The current version of the plugin.
 	 *
-	 * @since    0.1.0
+	 * @since    0.1.2
 	 * @access   protected
 	 * @var      string    $version    The current version of the plugin.
 	 */
@@ -64,13 +64,13 @@ class Sidebar_Menu_Items {
 	 * Load the dependencies, define the locale, and set the hooks for the admin area and
 	 * the public-facing side of the site.
 	 *
-	 * @since    0.1.0
+	 * @since    0.1.2
 	 */
 	public function __construct() {
 		if ( defined( 'SIDEBAR_MENU_ITEMS_VERSION' ) ) {
 			$this->version = SIDEBAR_MENU_ITEMS_VERSION;
 		} else {
-			$this->version = '0.1.0';
+			$this->version = '0.1.2';
 		}
 		$this->sidebar_menu_items = 'sidebar-menu-items';
 
@@ -94,7 +94,7 @@ class Sidebar_Menu_Items {
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
 	 *
-	 * @since    0.1.0
+	 * @since    0.1.2
 	 * @access   private
 	 */
 	private function load_dependencies() {
@@ -132,7 +132,7 @@ class Sidebar_Menu_Items {
 	 * Uses the sidebar_menu_items_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
-	 * @since    0.1.0
+	 * @since    0.1.2
 	 * @access   private
 	 */
 	private function set_locale() {
@@ -147,7 +147,7 @@ class Sidebar_Menu_Items {
 	 * Register all of the hooks related to the admin area functionality
 	 * of the plugin.
 	 *
-	 * @since    0.1.0
+	 * @since    0.1.2
 	 * @access   private
 	 */
 	private function define_admin_hooks() {
@@ -168,7 +168,7 @@ class Sidebar_Menu_Items {
 	 * Register all of the hooks related to the public-facing functionality
 	 * of the plugin.
 	 *
-	 * @since    0.1.0
+	 * @since    0.1.2
 	 * @access   private
 	 */
 	private function define_public_hooks() {
@@ -182,7 +182,7 @@ class Sidebar_Menu_Items {
 			'walker_nav_menu_start_el', $plugin_public, 'replace_anchor', 10, 4
 		);
 		$this->loader->add_filter( 
-			'nav_menu_item_title', $plugin_public, 'add_sidebar', 10, 4
+			'nav_menu_item_title', $plugin_public, 'add_sidebar', 20, 4
 		);
 		// $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		// $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -192,7 +192,7 @@ class Sidebar_Menu_Items {
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.
 	 *
-	 * @since    0.1.0
+	 * @since    0.1.2
 	 */
 	public function run() {
 		$this->loader->run();
@@ -202,7 +202,7 @@ class Sidebar_Menu_Items {
 	 * The name of the plugin used to uniquely identify it within the context of
 	 * WordPress and to define internationalization functionality.
 	 *
-	 * @since     0.1.0
+	 * @since     0.1.2
 	 * @return    string    The name of the plugin.
 	 */
 	public function get_sidebar_menu_items() {
@@ -212,7 +212,7 @@ class Sidebar_Menu_Items {
 	/**
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
-	 * @since     0.1.0
+	 * @since     0.1.2
 	 * @return    sidebar_menu_items_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
@@ -222,7 +222,7 @@ class Sidebar_Menu_Items {
 	/**
 	 * Retrieve the version number of the plugin.
 	 *
-	 * @since     0.1.0
+	 * @since     0.1.2
 	 * @return    string    The version number of the plugin.
 	 */
 	public function get_version() {

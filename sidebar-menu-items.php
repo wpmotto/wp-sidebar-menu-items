@@ -8,14 +8,14 @@
  * that starts the plugin.
  *
  * @link              https://motto.ca
- * @since             0.1.0
+ * @since             0.1.2
  * @package           sidebar_menu_items
  *
  * @wordpress-plugin
  * Plugin Name:       Sidebar Menu Items
  * Plugin URI:        http://github.com/mottodesignstudio/wp-sidebar-menu-items
  * Description:       Use sidebar areas within your menus.
- * Version:           0.1.0
+ * Version:           0.1.2
  * Author:            Motto
  * Author URI:        https://motto.ca
  * License:           GPL-2.0+
@@ -31,10 +31,10 @@ if ( ! defined( 'WPINC' ) ) {
 
 /**
  * Currently plugin version.
- * Start at version 0.1.0 and use SemVer - https://semver.org
+ * Start at version 0.1.2 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'SIDEBAR_MENU_ITEMS_VERSION', '0.1.0' );
+define( 'SIDEBAR_MENU_ITEMS_VERSION', '0.1.2' );
 
 /**
  * The code that runs during plugin activation.
@@ -70,7 +70,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-sidebar-menu-items.php';
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    0.1.0
+ * @since    0.1.2
  */
 function run_sidebar_menu_items() {
 

@@ -1,7 +1,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Sidebar Menu Items 0.1.0\n"
+"Project-Id-Version: WP Sidebar Menu Items 0.1.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-26 16:10-0500\n"
 "PO-Revision-Date: 2020-02-26 13:09+0100\n"

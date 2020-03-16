@@ -7,7 +7,7 @@
  * so that it is ready for translation.
  *
  * @link       http://example.com
- * @since      0.1.0
+ * @since      0.1.2
  *
  * @package    sidebar_menu_items
  * @subpackage sidebar_menu_items/includes
@@ -19,7 +19,7 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @since      0.1.0
+ * @since      0.1.2
  * @package    sidebar_menu_items
  * @subpackage sidebar_menu_items/includes
  * @author     Your Name <email@example.com>
@@ -30,7 +30,7 @@ class Sidebar_Menu_Items_i18n {
 	/**
 	 * Load the plugin text domain for translation.
 	 *
-	 * @since    0.1.0
+	 * @since    0.1.2
 	 */
 	public function load_plugin_textdomain() {
 

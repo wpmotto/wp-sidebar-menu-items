@@ -4,7 +4,7 @@
  * The admin-specific functionality of the plugin.
  *
  * @link       https://motto.ca
- * @since      0.1.0
+ * @since      0.1.2
  *
  * @package    sidebar_menu_items
  * @subpackage sidebar_menu_items/admin
