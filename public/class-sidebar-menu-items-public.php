@@ -4,7 +4,7 @@
  * The public-facing functionality of the plugin.
  *
  * @link       http://example.com
- * @since      0.1.2
+ * @since      0.1.4
  *
  * @package    sidebar_menu_items
  * @subpackage sidebar_menu_items/public
@@ -53,10 +53,22 @@ class Sidebar_Menu_Items_Public
         $this->version = $version;
     }
 
+    /**
+     * Unwraps the anchor menu item and replaces with
+     * a new HTML container.
+     *
+     * @since    0.1.4
+     * @param      string    $item_output   Menu item HTML
+     * @param      string    $item          Menu item object
+     * @param      string    $depth
+     * @param      string    $args
+     */
     public function replace_anchor($item_output, $item, $depth, $args)
     {
         if($this->is_sidebar_menu_object($item)) {
             $class = "{$this->sidebar_menu_items}-{$item->post_name}";
+            $charset = defined(DB_CHARSET) ? DB_CHARSET : 'utf-8';
+            $item_output = mb_convert_encoding($item_output, 'HTML-ENTITIES', $charset);
             // Suppress errors since we're loading a partial Doc.
             $doc = @DOMDocument::loadHTML($item_output);
             $sidebar = $doc->createElement('div');
