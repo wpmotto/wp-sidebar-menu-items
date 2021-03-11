@@ -4,7 +4,7 @@
  * The public-facing functionality of the plugin.
  *
  * @link       http://example.com
- * @since      0.1.4
+ * @since      0.1.5
  *
  * @package    sidebar_menu_items
  * @subpackage sidebar_menu_items/public
@@ -57,7 +57,7 @@ class Sidebar_Menu_Items_Public
      * Unwraps the anchor menu item and replaces with
      * a new HTML container.
      *
-     * @since    0.1.4
+     * @since    0.1.5
      * @param      string    $item_output   Menu item HTML
      * @param      string    $item          Menu item object
      * @param      string    $depth
@@ -69,8 +69,8 @@ class Sidebar_Menu_Items_Public
             $class = "{$this->sidebar_menu_items}-{$item->post_name}";
             $charset = defined(DB_CHARSET) ? DB_CHARSET : 'utf-8';
             $item_output = mb_convert_encoding($item_output, 'HTML-ENTITIES', $charset);
-            // Suppress errors since we're loading a partial Doc.
-            $doc = @DOMDocument::loadHTML($item_output);
+            $doc = new DOMDocument;
+            $doc->loadHTML("<html><body>$item_output</body>");
             $sidebar = $doc->createElement('div');
             $sidebar->setAttribute('class', $class);
             $container = $doc->getElementsByTagName('a')->item(0);
@@ -86,11 +86,9 @@ class Sidebar_Menu_Items_Public
         if($this->is_sidebar_menu_object($item)) {
             ob_start();
             dynamic_sidebar($this->get_sidebar_id($item));
-            $sidebar = ob_get_contents();
-            ob_end_clean();
-            $title = $sidebar;
+            $title = ob_get_clean();
         }
-        
+
         return $title;
     }
 
