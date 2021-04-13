@@ -70,7 +70,7 @@ class Sidebar_Menu_Items_Public
             $charset = defined(DB_CHARSET) ? DB_CHARSET : 'utf-8';
             $item_output = mb_convert_encoding($item_output, 'HTML-ENTITIES', $charset);
             $doc = new DOMDocument;
-            $doc->loadHTML("<html><body>$item_output</body>");
+            @$doc->loadHTML("<html><body>$item_output</body>");
             $sidebar = $doc->createElement('div');
             $sidebar->setAttribute('class', $class);
             $container = $doc->getElementsByTagName('a')->item(0);
