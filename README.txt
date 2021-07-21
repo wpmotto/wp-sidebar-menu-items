@@ -1,21 +1,22 @@
 === Sidebar Menu Items ===
 Contributors: mottodesignstudio
 Donate link: http://motto.ca
-Tags: mega menu, menu, menu items, nav menu, sidebar
+Tags: mega menu, menu, menu items, nav menu, sidebar, widget menu
 Requires at least: 3.0.1
-Tested up to: 5.6.2
-Stable tag: 0.1.5
+Tested up to: 5.8
+Stable tag: 0.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Use sidebar areas within your menus. Simple and flexibleway for making mega menu dropdowns!
+Use sidebars / widget areas within your menus. Simple and flexible way for making mega menu dropdowns!
 
 == Description ==
 
 This is a very lightweight plugin to simply add your defined sidebar widget areas as standard WordPress menu items. This is mostly useful for creating "mega menu" style dropdown menus. 
 
-Current solutions for adding mega menu support come with all sorts of overhead you probably don't need. This plugin uses the default WordPress api to use widgets in your sub menus to add the content you may need in a mega menu. Style as you wish.
+Current solutions for adding mega menu support come with all sorts of overhead you probably don't need. This plugin uses the default WordPress api to use widgets in your sub menus to add the content you may need in a mega menu, such as images, columns, shortcodes and other sub-menus. Style as you wish.
 
+[youtube https://www.youtube.com/watch?v=mw5ABRabXF4 ]
 
 == Installation ==
 
@@ -33,6 +34,9 @@ It simply gives you the tools to create the markup for a mega menu via widgets i
 2. Menu with a sidebar added as a sub menu item.
 
 == Changelog ==
+
+= 0.1.6 =
+Updated readme.txt
 
 = 0.1.5 =
 Fixed bug with LoadHTML dom parsing

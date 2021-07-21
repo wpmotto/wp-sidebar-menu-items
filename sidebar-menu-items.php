@@ -15,7 +15,7 @@
  * Plugin Name:       Sidebar Menu Items
  * Plugin URI:        http://github.com/mottodesignstudio/wp-sidebar-menu-items
  * Description:       Use sidebar areas within your menus.
- * Version:           0.1.5
+ * Version:           0.1.6
  * Author:            Motto
  * Author URI:        https://motto.ca
  * License:           GPL-2.0+
@@ -34,7 +34,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 0.1.2 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'SIDEBAR_MENU_ITEMS_VERSION', '0.1.5' );
+define( 'SIDEBAR_MENU_ITEMS_VERSION', '0.1.6' );
 
 /**
  * The code that runs during plugin activation.
